@@ -14,6 +14,8 @@ def get_confidence_label(confidence: int) -> str:
 
 def decide(gate: GateResult, scores: ScoreBreakdown) -> DecisionType:
     if not gate.passed:
+        if scores.final_score >= 75:
+            return "CONDITIONAL_APPLY"
         return "SKIP"
 
     # Extreme blockers only

@@ -530,7 +530,7 @@ with summary_cols[3]:
 tab_decision, tab_strategy, tab_proposal, tab_debug = st.tabs(
     ["Decision", "Strategy", "Proposal", "Debug"]
 )
-
+st.write("Gate passed:", result.gate.passed)
 
 # ============================================================
 # TAB 1: DECISION
