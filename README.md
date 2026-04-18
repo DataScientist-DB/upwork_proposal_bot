@@ -10,7 +10,7 @@ What proposal should I send?
 🚀 Live Demo
 
 👉 (Add your Streamlit link here after deployment)
-Example: https://your-app-name.streamlit.app
+Example: https://upworkproposalbot-bngxvgvaphy7ffkpyq9d34.streamlit.app/
 
 ✨ Features
 🔍 Smart Job Evaluation
