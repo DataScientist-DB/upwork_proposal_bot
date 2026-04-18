@@ -23,13 +23,14 @@ st.set_page_config(
     page_title="Upwork Proposal Bot",
     page_icon="🎯",
     layout="wide",
+    initial_sidebar_state="collapsed",
 )
 
 st.markdown(
     """
     <style>
         .block-container {
-            padding-top: 1.4rem;
+            padding-top: 1.2rem;
             padding-bottom: 2rem;
             max-width: 1260px;
         }
@@ -92,12 +93,56 @@ st.markdown(
 
         div[data-testid="stSidebar"] .block-container {
             padding-top: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        section[data-testid="stSidebar"] {
+            min-width: 320px !important;
+            max-width: 320px !important;
+        }
+
+        @media (max-width: 1024px) {
+            .block-container {
+                padding-top: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .app-title {
+                font-size: 1.7rem;
+            }
+
+            .app-subtitle {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .block-container {
+                padding-top: 0.8rem;
+                padding-left: 0.8rem;
+                padding-right: 0.8rem;
+            }
+
+            .app-title {
+                font-size: 1.45rem;
+            }
+
+            .app-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 0.9rem;
+            }
+
+            section[data-testid="stSidebar"] {
+                min-width: 280px !important;
+                max-width: 280px !important;
+            }
         }
     </style>
     """,
     unsafe_allow_html=True,
 )
-
 
 # ============================================================
 # HELPERS
@@ -243,7 +288,7 @@ def render_score_block(title: str, value: int, help_text: str = ""):
     st.markdown(f"**{title}**")
     st.progress(safe_value)
     st.caption(f"{safe_value}/100" + (f" · {help_text}" if help_text else ""))
-
+    st.caption("Use the sidebar toggle on the top-left to open job inputs.")
 
 def render_reason_list(title: str, items: list[str], empty_text: str):
     st.markdown(f"#### {title}")
