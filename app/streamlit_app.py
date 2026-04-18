@@ -25,28 +25,126 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
-
 st.markdown(
     """
     <style>
         .block-container {
-            padding-top: 1.2rem;
+            padding-top: 2.2rem;
             padding-bottom: 2rem;
-            max-width: 1260px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            max-width: 1280px;
+        }
+
+        .app-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-top: 0.4rem;
+            margin-bottom: 0.2rem;
+            line-height: 1.15;
+        }
+
+        .app-subtitle {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 0.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .soft-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 16px 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+            box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #f3f4f6;
+            color: #374151;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        div[data-testid="stTabs"] button {
+            font-weight: 600;
+        }
+
+        div[data-testid="stTextArea"] textarea {
+            border-radius: 14px !important;
+        }
+
+        div[data-testid="stDownloadButton"] button,
+        div[data-testid="stButton"] button {
+            border-radius: 12px !important;
+            font-weight: 600 !important;
+        }
+
+        section[data-testid="stSidebar"] {
+            min-width: 320px !important;
+            max-width: 320px !important;
         }
 
         div[data-testid="stSidebar"] .block-container {
-            padding-top: 1rem;
+            padding-top: 1.2rem;
             padding-left: 1rem;
             padding-right: 1rem;
         }
 
-        section[data-testid="stSidebar"] {
-            min-width: 300px !important;
-            max-width: 300px !important;
+        header[data-testid="stHeader"] {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        @media (max-width: 1024px) {
+            .block-container {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+                padding-top: 1.6rem;
+            }
+
+            .app-title {
+                font-size: 1.7rem;
+            }
+
+            .app-subtitle {
+                font-size: 0.95rem;
+            }
+
+            section[data-testid="stSidebar"] {
+                min-width: 280px !important;
+                max-width: 280px !important;
+            }
         }
 
         @media (max-width: 768px) {
+            .block-container {
+                padding-left: 0.9rem;
+                padding-right: 0.9rem;
+                padding-top: 1.2rem;
+            }
+
+            .app-title {
+                font-size: 1.45rem;
+            }
+
+            .app-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 0.9rem;
+            }
+
             section[data-testid="stSidebar"] {
                 min-width: 260px !important;
                 max-width: 260px !important;
